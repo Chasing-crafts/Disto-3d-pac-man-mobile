@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -13,89 +14,79 @@
 </head>
 
 <body>
-    <audio id="music">
-        <source src="./assets/sound/music.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="munch">
-        <source src="./assets/sound/munch_1.wav" type="audio/wav">
-    </audio>
-    <audio id="powerup">
-        <source src="./assets/sound/eat_fruit.wav" type="audio/wav">
-    </audio>
-    <audio id="death">
-        <source src="./assets/sound/death_1.wav" type="audio/wav">
-    </audio>
-    <audio id="eat">
-        <source src="./assets/sound/eat_ghost.wav" type="audio/wav">
-    </audio>
+    <div class="game-container">
+        <audio id="music">
+            <source src="./assets/sound/music.mp3" type="audio/mpeg">
+        </audio>
+        <!-- Audio elements for sound effects -->
 
-    <div id="start-ui" class="ui">
-        <h1>3D Pac-Man</h1>
-        <div class="controls">
-            <table>
-                <tr>
-                    <td class="keys">WASD or Arrow Keys</td>
-                    <td>Move Pac-Man</td>
-                </tr>
-                <tr>
-                    <td class="keys">Digits 1, 2, 3</td>
-                    <td>Change camera angel</td>
-                </tr>
-                <tr>
-                    <td class="keys">Esc or P</td>
-                    <td>Pause Game</td>
-                </tr>
-                <tr>
-                    <td class="keys">M</td>
-                    <td>Mute music</td>
-                </tr>
-            </table>
+        <div id="start-ui" class="ui">
+            <h1>3D Pac-Man</h1>
+            <div class="controls">
+                <table>
+                    <tr>
+                        <td class="keys">WASD or Arrow Keys</td>
+                        <td>Move Pac-Man</td>
+                    </tr>
+                    <tr>
+                        <td class="keys">Digits 1, 2, 3</td>
+                        <td>Change camera angle</td>
+                    </tr>
+                    <tr>
+                        <td class="keys">Esc or P</td>
+                        <td>Pause Game</td>
+                    </tr>
+                    <tr>
+                        <td class="keys">M</td>
+                        <td>Mute music</td>
+                    </tr>
+                </table>
+            </div>
+            <button id="start">Start Game</button>
         </div>
-        <button id="start">Start Game</button>
-    </div>
 
-    <div id="pause-ui" class="ui hide">
-        <h1>Game Paused</h1>
-        <div class="controls">
-            <table>
-                <tr>
-                    <td class="keys">WASD / Arrow Keys</td>
-                    <td>Move Pac-Man</td>
-                </tr>
-                <tr>
-                    <td class="keys">Digits 1, 2, 3</td>
-                    <td>Change camera angel</td>
-                </tr>
-                <tr>
-                    <td class="keys">Esc / P</td>
-                    <td>Pause Game</td>
-                </tr>
-                <tr>
-                    <td class="keys">M</td>
-                    <td>Mute music</td>
-                </tr>
-            </table>
+        <div id="pause-ui" class="ui hide">
+            <h1>Game Paused</h1>
+            <div class="controls">
+                <table>
+                    <tr>
+                        <td class="keys">WASD / Arrow Keys</td>
+                        <td>Move Pac-Man</td>
+                    </tr>
+                    <tr>
+                        <td class="keys">Digits 1, 2, 3</td>
+                        <td>Change camera angle</td>
+                    </tr>
+                    <tr>
+                        <td class="keys">Esc / P</td>
+                        <td>Pause Game</td>
+                    </tr>
+                    <tr>
+                        <td class="keys">M</td>
+                        <td>Mute music</td>
+                    </tr>
+                </table>
+            </div>
+            <button id="resume">Resume Game</button>
         </div>
-        <button id="resume">Resume Game</button>
+
+        <div id="game-over-ui" class="ui hide">
+            <h1>Game Over</h1>
+        </div>
+
+        <div id="victory-ui" class="ui hide">
+            <h1>Victory!</h1>
+        </div>
+
+        <div class="score-panel">
+            <p>Score:</p>
+            <p id="score">0</p>
+        </div>
+        <div class="lives"></div>
     </div>
 
-    <div id="game-over-ui" class="ui hide">
-        <h1>Game Over</h1>
-    </div>
-
-    <div id="victory-ui" class="ui hide">
-        <h1>Victory!</h1>
-    </div>
-
-
-    <div class="score-panel">
-        <p>Score:</p>
-        <p id="score">0</p>
-    </div>
-    <div class="lives"></div>
+    <script type="text/javascript" src="./src/main.js"></script>
+    <script src="./build/bundle.js"></script>
 </body>
-
-<script type="text/javascript" src="./src/main.js"></script>
-<script src="./build/bundle.js"></script>
 
 </html>
