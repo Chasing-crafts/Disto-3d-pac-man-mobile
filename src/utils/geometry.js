@@ -6,7 +6,7 @@ import { setCells, setFoodCount, setGhosts } from './data';
 import { level } from './data';
 
 export const createSkyBox = (scene, mapSize) => {
-  const skyboxGeometry = new THREE.BoxGeometry(50, 50, 50);
+  const skyboxGeometry = new THREE.BoxGeometry(mapSize, mapSize, mapSize);
   const skyBoxMaterial = createSkyboxMaterial();
   const skybox = new THREE.Mesh(skyboxGeometry, skyBoxMaterial);
   skybox.position.set(mapSize / 2, 0, mapSize / 2);
@@ -14,11 +14,11 @@ export const createSkyBox = (scene, mapSize) => {
 };
 
 export const createGround = (scene, mapSize) => {
-  const groundGeometry = new THREE.PlaneGeometry(mapSize + 1, mapSize);
+  const groundGeometry = new THREE.PlaneGeometry(mapSize, mapSize);
   const groundMaterial = createSolidColorMaterial(colors.black);
   const ground = new THREE.Mesh(groundGeometry, groundMaterial);
   ground.rotateX(-Math.PI / 2);
-  ground.position.set((mapSize + 1) / 2 - 0.5, 0, mapSize / 2 - 0.5);
+  ground.position.set(mapSize / 2, 0, mapSize / 2);
   ground.receiveShadow = true;
   scene.add(ground);
 };
