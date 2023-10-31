@@ -12,5 +12,5 @@ export const createSkyboxMaterial = () => {
 };
 
 export const createSolidColorMaterial = (solidColor) => {
-  return new THREE.MeshPhongMaterial( { color: solidColor } );
-}
+  return new THREE.MeshPhongMaterial({ color: solidColor });
+};
