@@ -64,7 +64,7 @@ document.querySelector('#start').addEventListener('click', () => {
 document.querySelector('#resume').addEventListener('click', () => {
   gameRunning = true;
   pauseScreen.classList.add('hide');
-  document.body.classList.add('hide-cursor');
+  document.body.classList add('hide-cursor');
 });
 
 document.addEventListener('keydown', ({ keyCode }) => {
@@ -94,12 +94,12 @@ document.addEventListener('keydown', ({ keyCode }) => {
   }
 });
 
-document.addEventListener('mousemove', (e) => {
-  userAngle += origX - e.clientX;
+document.addEventListener('touchmove', (e) => {
+  userAngle += origX - e.touches[0].clientX;
   userAngle %= 360.0;
   userXDir = Math.sin(userAngle * (Math.PI / 180));
   userZDir = Math.cos(userAngle * (Math.PI / 180));
-  origX = e.clientX;
+  origX = e.touches[0].clientX;
 });
 
 const init = () => {
@@ -188,7 +188,7 @@ const animate = () => {
   if (getFoodCount() <= 0) {
     gameRunning = false;
     camera.position.set(14.5, 22, 14);
-    camera.lookAt(14.5, 0, 14);
+    camera lookAt(14.5, 0, 14);
     victoryScreen.classList.remove('hide');
     document.body.classList.remove('hide-cursor');
   }
