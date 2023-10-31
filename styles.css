@@ -1,10 +1,10 @@
+/* Define styles for large screens */
 * {
   margin: 0;
   padding: 0;
 }
 
-body,
-html {
+body, html {
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -45,6 +45,23 @@ h1 {
   margin-right: 12px;
 }
 
+/* Add a media query for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+  body, html {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+  
+  h1 {
+    width: 80%; /* Make the title width responsive */
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+  
+  button {
+    width: 80%; /* Make the button width responsive */
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
+
 .ui {
   display: block;
   position: absolute;
@@ -59,8 +76,6 @@ h1 {
 }
 
 button {
-  width: 420px;
-  height: 50px;
   border-radius: 2px;
   background: rgb(162, 107, 49);
   background: linear-gradient(
